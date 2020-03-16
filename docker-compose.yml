@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  proxy:
+    image: envoyproxy/envoy-alpine
+    ports:
+      - 8080:8080
+      - 9901:9901
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
