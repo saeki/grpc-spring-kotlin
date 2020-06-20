@@ -6,8 +6,8 @@ plugins {
     id("com.google.protobuf") version "0.8.12"
 }
 
-val grpcVersion = "1.28.0"
-val protocVersion = "3.11.4"
+val grpcVersion = "1.30.0"
+val protocVersion = "3.12.2"
 
 java.sourceCompatibility = JavaVersion.VERSION_11
 
