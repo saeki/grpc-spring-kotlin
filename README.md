@@ -8,10 +8,18 @@ Example of gRPC server with Spring.
 $ ./gradlew bootRun
 ```
 
-Access with grpcc:
+### Access from client
+
+#### grpcc
 
 ```
-$ ./grpcc.sh
+$ grpcc --directory ./grpc/src/main/proto --proto helloworld.proto --address localhost:9090 --insecure --eval "client.sayHello({ name: 'gRPC' }, printReply)"
+```
+
+#### evans
+
+```
+$ echo '{ "name": "gRPC" }' | evans cli call helloworld.Greeter.SayHello --port 9090 --path ./grpc/src/main/proto --proto helloworld.proto
 ```
 
 ### Launch gRPC-Web proxy (optional)
@@ -26,4 +34,5 @@ $ docker-compose up -d
 * [gRPC-Java](https://github.com/grpc/grpc-java)
 * [gRPC Spring Boot Starter](https://github.com/yidongnan/grpc-spring-boot-starter)
 * [grpcc](https://github.com/njpatel/grpcc)
+* [evans](https://github.com/ktr0731/evans)
 * [Envoy](https://www.envoyproxy.io/)
