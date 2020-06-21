@@ -22,6 +22,23 @@ $ grpcc --directory ./grpc/src/main/proto --proto helloworld.proto --address loc
 $ echo '{ "name": "gRPC" }' | evans cli call helloworld.Greeter.SayHello --port 9090 --path ./grpc/src/main/proto --proto helloworld.proto
 ```
 
+If `.evans.toml` is exist, you can omit the params.
+```
+[default]
+protoPath = ["./grpc/src/main/proto/"]
+protoFile = ["helloworld.proto"]
+package = "helloworld"
+service = "Greeter"
+
+[server]
+host = "127.0.0.1"
+port = "9090"
+```
+
+```
+$ echo '{ "name": "gRPC" }' | evans cli call SayHello
+```
+
 ### Launch gRPC-Web proxy (optional)
 
 ```

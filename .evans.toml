@@ -1,0 +1,9 @@
+[default]
+protoPath = ["./grpc/src/main/proto/"]
+protoFile = ["helloworld.proto"]
+package = "helloworld"
+service = "Greeter"
+
+[server]
+host = "127.0.0.1"
+port = "9090"
