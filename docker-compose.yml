@@ -2,7 +2,7 @@ version: '3'
 services:
 
   proxy:
-    image: envoyproxy/envoy-alpine
+    image: envoyproxy/envoy-alpine:v1.14-latest
     ports:
       - 8080:8080
       - 9901:9901
